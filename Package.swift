@@ -8,7 +8,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Fractions_arithmetic",
+            name: "Fractions_arithmetics",
             dependencies: ["SPMUtility"])
     ]
 )
