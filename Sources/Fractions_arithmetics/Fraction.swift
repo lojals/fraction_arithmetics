@@ -20,6 +20,13 @@ struct Fraction {
         return module == 0 ? rhs : gcd(lhs: rhs, rhs: module)
     }
     
+    /// A function to reduce a fraction to lowest terms.
+    ///
+    /// - Returns: The reduced fraction.
+    func simplify() -> Fraction {
+        return simplify(numerator, denominator)
+    }
+    
     ///  A function to reduce a fraction to lowest terms.
     ///
     /// - Parameters:
@@ -105,5 +112,12 @@ extension Fraction: CustomStringConvertible {
         } else {
             return "\(numerator)/\(denominator)"
         }
+    }
+}
+
+// MARK: - Comparable
+extension Fraction: Equatable {
+    static func == (lhs: Fraction, rhs: Fraction) -> Bool {
+        return lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator
     }
 }
